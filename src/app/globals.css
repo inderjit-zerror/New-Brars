@@ -1,26 +1,110 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  width:100%;
+  font-family:Helvetica;
+  position:relative;
+}
+
+@font-face {
+  font-family:Font1;
+  src: url('/fonts/f1.woff2');
+}
+@font-face {
+  font-family:Font2;
+  src: url('/fonts/f2.woff2');
+}
+@font-face {
+  font-family:Font3;
+  src: url('/fonts/f3.woff2');
+}
+
+
+.Font1{
+  font-family:Font1;
+}
+
+.Font2{
+  font-family:Font2;
+}
+
+.Font3{
+  font-family:Font3;
+}
+
+
+/* ============================================= burger menu */
+.burger {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.burger input {
+  display: none;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: black;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+
+/* ================================================= */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide.custom_slide {
+  width:100%;
+  max-width: 800px !important;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items:center;
 }
