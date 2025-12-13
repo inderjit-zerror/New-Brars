@@ -12,6 +12,7 @@ const HeroSection = () => {
   const productRefs = useRef([]);
   const [PrevBG, SetPrevBG] = useState();
 
+
   const ProductItem = [
     {
       bgCircleColor: `#FFC629`,
@@ -64,7 +65,7 @@ const HeroSection = () => {
 
     BGTL.to(".BGCircle", {
       scale: 1,
-      delay:0.2,
+      delay: 0.2,
       duration: 0.001,
     });
   }, [activeIndex]);
@@ -89,6 +90,34 @@ const HeroSection = () => {
       );
     }
   }, [activeIndex]);
+
+  // useEffect(() => {
+  //   const updateBullets = () => {
+  //     const bullets = document.querySelectorAll(".custom_bullet");
+
+  //     bullets.forEach((bullet) => {
+  //       bullet.classList.remove("custom_bullet_active");
+  //       const existingFill = bullet.querySelector(".progress_fill");
+  //       if (existingFill) bullet.removeChild(existingFill);
+  //     });
+
+  //     const activeBullet = bullets[activeIndex];
+  //     if (activeBullet) {
+  //       activeBullet.classList.add("custom_bullet_active");
+
+  //       const fill = document.createElement("div");
+  //       fill.className = "progress_fill";
+  //       activeBullet.appendChild(fill);
+
+  //       requestAnimationFrame(() => {
+  //         fill.offsetWidth;
+  //         fill.style.width = "100%";
+  //       });
+  //     }
+  //   };
+
+  //   updateBullets();
+  // }, [activeIndex]);
 
   return (
     <div
@@ -117,8 +146,15 @@ const HeroSection = () => {
               centeredSlides={true}
               loop={true}
               pagination={{
+                el: ".swiper_pagination",
                 clickable: true,
+                renderBullet: (index, className) =>
+                  `<span class="${className} custom_bullet" data-index="${index}"></span>`,
               }}
+              // pagination={{
+
+              //   clickable: true,
+              // }}
               autoplay={{
                 delay: 2500, // 2.5 seconds
                 disableOnInteraction: false,
@@ -128,6 +164,7 @@ const HeroSection = () => {
                 setActiveIndex(swiper.realIndex);
               }}
               className="mySwiper"
+             
             >
               {ProductItem.map((item, index) => {
                 return (
@@ -139,11 +176,10 @@ const HeroSection = () => {
                           {
                             <h1
                               style={{ color: item.textColor }}
-                              className={`Font3 text-[4vw] leading-[4vw] max-sm:text-[3rem] max-sm:leading-[3rem] text-center uppercase transition-all duration-700  ${
-                                activeIndex === index
+                              className={`Font3 text-[4vw] leading-[4vw] max-sm:text-[3rem] max-sm:leading-[3rem] text-center uppercase transition-all duration-700  ${activeIndex === index
                                   ? "opacity-100"
                                   : "opacity-0"
-                              }`}
+                                }`}
                             >
                               {item.title}
                             </h1>
@@ -155,13 +191,11 @@ const HeroSection = () => {
                           <img
                             ref={(el) => (productRefs.current[index] = el)}
                             src={item.ProductUrl}
-                            className={`${
-                              index == 0 && "w-[600px]"
-                            } transition-all duration-[900ms] ease-out ${
-                              activeIndex === index
+                            className={`${index == 0 && "w-[600px]"
+                              } transition-all duration-[900ms] ease-out ${activeIndex === index
                                 ? "rotate-0 scale-100"
                                 : "rotate-[-5deg] scale-90 opacity-70"
-                            }`}
+                              }`}
                             alt="PI"
                           />
 
@@ -170,11 +204,10 @@ const HeroSection = () => {
                           <img
                             className={` absolute top-[20%]  translate-y-[-50%] left-0 z-[-1] w-[10vw] max-sm:w-[100px] 
                                         transition-all duration-[700ms] ease-out
-                                            ${
-                                              activeIndex === index
-                                                ? "translate-x-[-0%] translate-y-[-20%] scale-100 rotate-[-30deg] opacity-100"
-                                                : "translate-x-[80%] translate-y-[20%] scale-0 rotate-0 opacity-0"
-                                            }
+                                            ${activeIndex === index
+                                ? "translate-x-[-0%] translate-y-[-20%] scale-100 rotate-[-30deg] opacity-100"
+                                : "translate-x-[80%] translate-y-[20%] scale-0 rotate-0 opacity-0"
+                              }
 
                                             `}
                             src={"/img/heroSectionImg/lable.avif"}
@@ -184,11 +217,10 @@ const HeroSection = () => {
                           <img
                             className={` absolute top-[80%]  translate-y-[-50%] right-0 z-[-1] w-[10vw] max-sm:w-[100px] 
                                         transition-all duration-[700ms] ease-out
-                                            ${
-                                              activeIndex === index
-                                                ? "translate-x-[-0%]  scale-100 rotate-[30deg] opacity-100"
-                                                : "translate-x-[20%] scale-0 rotate-0 opacity-0"
-                                            }
+                                            ${activeIndex === index
+                                ? "translate-x-[-0%]  scale-100 rotate-[30deg] opacity-100"
+                                : "translate-x-[20%] scale-0 rotate-0 opacity-0"
+                              }
 
                                             `}
                             src={"/img/heroSectionImg/lable.avif"}
@@ -199,11 +231,10 @@ const HeroSection = () => {
                           <img
                             className={` absolute top-[10%]  translate-y-[-50%] right-[14%] z-[-1] w-[35px] max-sm:w-[25px] 
                                         transition-all duration-[700ms] ease-out
-                                            ${
-                                              activeIndex === index
-                                                ? "translate-x-[+120%]  scale-100 rotate-[30deg] opacity-100"
-                                                : "translate-x-[14%] scale-0 rotate-0 opacity-0"
-                                            }
+                                            ${activeIndex === index
+                                ? "translate-x-[+120%]  scale-100 rotate-[30deg] opacity-100"
+                                : "translate-x-[14%] scale-0 rotate-0 opacity-0"
+                              }
 
                                             `}
                             src={"/svg/star.svg"}
@@ -212,11 +243,10 @@ const HeroSection = () => {
                           <img
                             className={` absolute top-[30%]  translate-y-[-40%] right-[10%] z-[-1] w-[40px] max-sm:w-[20px] 
                                         transition-all duration-[700ms] ease-out
-                                            ${
-                                              activeIndex === index
-                                                ? "translate-x-[+120%]  scale-100 rotate-[30deg] opacity-100"
-                                                : "translate-x-[10%] scale-0 rotate-0 opacity-0"
-                                            }
+                                            ${activeIndex === index
+                                ? "translate-x-[+120%]  scale-100 rotate-[30deg] opacity-100"
+                                : "translate-x-[10%] scale-0 rotate-0 opacity-0"
+                              }
 
                                             `}
                             src={"/svg/star.svg"}
@@ -225,11 +255,10 @@ const HeroSection = () => {
                           <img
                             className={` absolute top-[45%]  translate-y-[-40%] left-[5%] z-[-1] w-[35px] max-sm:w-[25px] 
                                         transition-all duration-[700ms] ease-out
-                                            ${
-                                              activeIndex === index
-                                                ? "translate-x-[-120%]  scale-100 rotate-[30deg] opacity-100"
-                                                : "translate-x-[5%] scale-0 rotate-0 opacity-0"
-                                            }
+                                            ${activeIndex === index
+                                ? "translate-x-[-120%]  scale-100 rotate-[30deg] opacity-100"
+                                : "translate-x-[5%] scale-0 rotate-0 opacity-0"
+                              }
 
                                             `}
                             src={"/svg/star.svg"}
@@ -238,11 +267,10 @@ const HeroSection = () => {
                           <img
                             className={` absolute top-[-5%]  translate-y-[-40%] left-[20%] z-[-1] w-[25px] max-sm:w-[13px] 
                                         transition-all duration-[700ms] ease-out
-                                            ${
-                                              activeIndex === index
-                                                ? "translate-x-[-120%]  scale-100 rotate-[30deg] opacity-100"
-                                                : "translate-x-[5%] scale-0 rotate-0 opacity-0"
-                                            }
+                                            ${activeIndex === index
+                                ? "translate-x-[-120%]  scale-100 rotate-[30deg] opacity-100"
+                                : "translate-x-[5%] scale-0 rotate-0 opacity-0"
+                              }
 
                                             `}
                             src={"/svg/star.svg"}
@@ -251,10 +279,14 @@ const HeroSection = () => {
                         </div>
                       </div>
                     </SwiperSlide>
+
                   </>
                 );
               })}
             </Swiper>
+           {/* <div className="swiperBtns ">
+           <div className="swiper_pagination  " />
+           </div> */}
           </div>
 
           {/* BTN-Lable */}

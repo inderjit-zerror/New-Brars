@@ -3,16 +3,22 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Pagination, Navigation } from "swiper/modules";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { GoDotFill } from "react-icons/go";
 import { MdVerified } from "react-icons/md";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdOutlineChevronLeft } from "react-icons/md";
+import MainBtn from "../common/MainBtn";
 
 const SecondSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
   const marqueeRef = useRef(null);
   const tweenRef = useRef(null);
   const swiperWrapperRef = useRef(null);
+  const [swiperInstance, setSwiperInstance] = useState(null);
+  const swiperRef = useRef(null);
 
   // ===================================  PRODUCT CODE
   const mostpopular = [
@@ -181,6 +187,34 @@ const SecondSection = () => {
     }
   };
 
+  useEffect(() => {
+    const updateBullets = () => {
+      const bullets = document.querySelectorAll(".custom_bullet");
+
+      bullets.forEach((bullet) => {
+        bullet.classList.remove("custom_bullet_active");
+        const existingFill = bullet.querySelector(".progress_fill");
+        if (existingFill) bullet.removeChild(existingFill);
+      });
+
+      const activeBullet = bullets[activeIndex];
+      if (activeBullet) {
+        activeBullet.classList.add("custom_bullet_active");
+
+        const fill = document.createElement("div");
+        fill.className = "progress_fill";
+        activeBullet.appendChild(fill);
+
+        requestAnimationFrame(() => {
+          fill.offsetWidth;
+          fill.style.width = "100%";
+        });
+      }
+    };
+
+    updateBullets();
+  }, [activeIndex]);
+
   return (
     <div className="w-full min-h-screen bg-[#FCFAF8] flex justify-center items-center">
       <div className="w-[90%] h-[90vh] max-md:w-[95%] bg-[#C5B4E2] rounded-[30px] flex translate-y-[-20dvh] flex-col max-sm:translate-y-[-30dvh]">
@@ -207,11 +241,10 @@ const SecondSection = () => {
             {categories.map((cat, index) => (
               <button
                 key={index}
-                className={`px-[30px] py-[15px] rounded-[10px] select-none cursor-pointer  hover:outline hover:outline-[2px] hover:outline-black ${
-                  activeBtn === cat.name
-                    ? "bg-black text-white border border-black"
-                    : "bg-transparent text-black "
-                }`}
+                className={`px-[30px] py-[15px] rounded-[10px] select-none cursor-pointer  hover:outline hover:outline-[2px] hover:outline-black ${activeBtn === cat.name
+                  ? "bg-black text-white border border-black"
+                  : "bg-transparent text-black "
+                  }`}
                 onClick={() => {
                   setActiveBtn(cat.name);
                   handleCategoryClick(cat.data);
@@ -279,14 +312,25 @@ const SecondSection = () => {
               className="opacity-100 transition-opacity duration-300"
             >
               <Swiper
+                ref={swiperRef}
                 slidesPerView={"3.5"}
                 // centeredSlides={true}
                 spaceBetween={40}
                 loop={true}
                 pagination={{
+                  el: ".swiper_pagination",
                   clickable: true,
+                  renderBullet: (index, className) =>
+                    `<span class="${className} custom_bullet" data-index="${index}"></span>`,
                 }}
-                modules={[Pagination]}
+                onSlideChange={(swiper) => {
+                  setActiveIndex(swiper.realIndex);
+                }}
+                modules={[Pagination, Navigation]}
+                navigation={false}
+                onSwiper={(swiper) => {
+                  swiperRef.current = swiper;
+                }}
                 breakpoints={{
                   0: {
                     slidesPerView: "auto",
@@ -360,6 +404,19 @@ const SecondSection = () => {
                   </SwiperSlide>
                 ))}
               </Swiper>
+              <div className="swiperBtns bg-[#231F20] px-[22px] py-[13px] rounded-lg ">
+                <button onClick={() => swiperRef.current?.slidePrev()}><div className={`w-fit cursor-pointer h-full rounded-[7px]  px-[4px] py-[4px] bg-white flex justify-center items-center `}>
+                <MdOutlineChevronLeft />
+                </div></button>
+                <div className="swiper_pagination" />
+                <button onClick={() => swiperRef.current?.slideNext()}><div className={`w-fit cursor-pointer h-full rounded-[7px] px-[4px] py-[4px] bg-white flex justify-center items-center `}>
+                  <MdKeyboardArrowRight />
+                </div></button>
+
+                <div className="w-fit h-fit flex ml-[20px]">
+                <MainBtn size={'small'} text={'View All'} theam={'white'} simble={true}  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
