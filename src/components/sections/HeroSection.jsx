@@ -127,7 +127,7 @@ const HeroSection = () => {
     >
       <div className="BGCircle absolute top-[40%] left-[50%] translate-x-[-50%] w-[50px] h-[50px] rounded-full"></div>
 
-      <div className="w-full h-screen absolute top-0 left-0 flex justify-center items-center  ">
+      <div className="w-full h-screen absolute top-0 left-0 flex justify-center items-center ">
         {/* Texture Section */}
         <div className="w-full h-screen relative flex justify-center items-center max-lg:items-start max-md:pt-[100px]  ">
           {/* Texture cont */}
@@ -140,7 +140,7 @@ const HeroSection = () => {
           </div>
 
           {/* Product */}
-          <div className="w-full h-screen absolute top-0 left-0 flex justify-center items-center  ">
+          <div className="w-full h-screen  absolute top-0 left-0 flex justify-center items-center  ">
             <Swiper
               slidesPerView={"auto"}
               spaceBetween={250}
@@ -170,7 +170,7 @@ const HeroSection = () => {
               {ProductItem.map((item, index) => {
                 return (
                   <>
-                    <SwiperSlide key={index} className=" custom_slide flex justify-center items-center max-sm:pt-[120px] max-sm:pb-[140px]">
+                    <SwiperSlide key={index} className=" custom_slide  flex justify-center items-center max-sm:pt-[120px] max-sm:pb-[140px]">
                       <div className=" w-full max-w-[800px] h-[600px] max-sm:h-fit  flex flex-col">
                         {/* Title */}
                         <div className="w-full h-fit flex justify-center items-center text-wrap px-[2vw] select-none">
