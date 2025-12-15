@@ -76,6 +76,7 @@ const NavBar = () => {
           ".PcMenuDisplay",
           {
             opacity: 1,
+            direction:0.02
           },
           "pc1"
         );
@@ -83,8 +84,8 @@ const NavBar = () => {
           ".PcMenuDisplay",
           {
             height: "80dvh",
-            duration: 1,
-            ease: "power4.inOut",
+            duration: 0.5,
+            ease: "ease.Out",
           },
           "pc1"
         );
@@ -94,7 +95,7 @@ const NavBar = () => {
             opacity: 1,
             delay: 0.4,
             stagger: 0.1,
-            ease: "power4.inOut",
+            ease: "ease.Out",
           },
           "pc1"
         );
@@ -106,7 +107,7 @@ const NavBar = () => {
           {
             opacity: 0,
             stagger: 0.1,
-            ease: "power4.inOut",
+            ease: "ease.Out",
           },
           "pc1"
         );
@@ -115,8 +116,8 @@ const NavBar = () => {
           {
             height: "0dvh",
             delay: 0.02,
-            duration: 1,
-            ease: "power4.inOut",
+            duration: 0.5,
+            ease: "ease.Out",
           },
           "pc1"
         );
@@ -143,6 +144,7 @@ const NavBar = () => {
         ".SMMenuDisplay",
         {
           opacity: 1,
+          duration:0.02
         },
         "SM1"
       );
@@ -151,7 +153,7 @@ const NavBar = () => {
         {
           height: "85dvh",
           duration: 1,
-          ease: "power4.inOut",
+          ease: "ease.Out",
         },
         "SM1"
       );
@@ -161,7 +163,7 @@ const NavBar = () => {
           opacity: 1,
           delay: 0.4,
           stagger: 0.1,
-          ease: "power4.inOut",
+          ease: "ease.Out",
         },
         "SM1"
       );
@@ -194,7 +196,7 @@ const NavBar = () => {
     <div className="w-full h-fit flex fixed top-0 left-0 z-100 justify-center items-center">
       
       {/* Nav Container */}
-      <div className="w-[85%] max-xl:w-[95%] flex h-fit py-[20px] max-xl:py-[10px] bg-[#231F20] mt-[20px] rounded-[20px] max-xl:rounded-[10px] relative items-center px-[2vw]">
+      <div className="w-[95%] max-xl:w-[95%] flex h-fit py-[20px] max-xl:py-[10px] bg-[#231F20] mt-[20px] rounded-[20px] max-xl:rounded-[10px] relative items-center px-[2vw]">
         {/* Left */}
         <div className="w-full h-fit flex gap-4.5 text-white max-xl:hidden ">
           {menuArr.map((item, index) => {

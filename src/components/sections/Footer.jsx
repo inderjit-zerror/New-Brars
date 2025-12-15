@@ -3,11 +3,11 @@ import { FaInstagram, FaFacebookF, FaTiktok } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#231F20] text-white px-6 py-16 Font3">
+    <footer className="bg-[#231F20] text-white px-6 py-16 Font3 overflow-hidden">
       {/* Top Brand Section */}
       <div className="text-center mb-14">
-        <img src={`/svg/logo.svg`} className="w-[180px] mx-auto" alt="logo" />
-        <h2 className="text-[#d6b37c] text-4xl mt-[20px] md:text-7xl font-extrabold tracking-wide Font3">
+        <img src={`/svg/logo.svg`} className="w-[180px] max-md:w-[140px] mx-auto" alt="logo" />
+        <h2 className="text-[#d6b37c] text-4xl mt-[20px] md:text-7xl max-md:text-[22px] font-extrabold tracking-wide Font3">
           #VEGETARIANDONEBETTER
         </h2>
       </div>

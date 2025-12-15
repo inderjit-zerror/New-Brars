@@ -14,32 +14,32 @@ const LastSection = () => {
         })
     },[])
     return (
-        <div className='w-full h-screen flex flex-col relative'>
+        <div className='w-full h-screen max-sm:h-fit flex flex-col relative max-sm:translate-y-[-30dvh] '>
 
             {/* Top */}
-            <div className='w-full h-[50vh] bg-[#FF4900] overflow-hidden'>
-                <div className='w-[50%] mx-auto bgR'>
+            <div className='w-full h-[50vh] bg-[#FF4900] overflow-hidden '>
+                <div className='w-[50%] mx-auto bgR max-md:w-[99%] flex max-md:translate-y-[30%]'>
                     <img src={`https://www.brars.com/images/footer/mandala-spin.svg`} className='w-full' alt="ig" />
                 </div>
             </div>
 
             {/* Bottom */}
-            <div className='w-full h-[50vh] bg-[#231F20]'>
+            <div className='w-full h-[50vh] bg-[#231F20] max-sm:hidden'>
 
             </div>
 
             {/* TOP-TOP */}
             <div className='w-full h-screen absolute top-0 left-0 flex justify-center items-center'>
 
-                <div className='w-[70%] h-fit bg-[#C5B4E2] rounded-2xl py-[6vw] flex flex-col items-center relative'>
+                <div className='w-[70%] h-fit bg-[#C5B4E2] rounded-2xl py-[6vw] flex flex-col items-center relative max-md:w-[90%] max-md:pt-[40px]'>
 
 
-                    <div className='w-full h-fit flex uppercase flex-col text-[5vw] leading-[4vw] justify-center items-center Font3'>
+                    <div className='w-full h-fit flex uppercase flex-col text-[5vw] leading-[4vw] max-md:text-[8vw] max-md:leading-[7vw] justify-center items-center Font3'>
                         <h1>Spice Up Your</h1>
                         <h1>Inbox</h1>
                     </div>
 
-                    <p className='Font2 text-black text-[22px] mt-[2vw]'>Get special offers and all the latest products, recipes, and news delivered to your inbox!</p>
+                    <p className='Font2 text-black text-[22px] mt-[2vw] max-md:text-[16px] max-md:leading-[16px] max-md:px-[10vw] text-center'>Get special offers and all the latest products, recipes, and news delivered to your inbox!</p>
 
                     {/* Form */}
                     <div className="bg-[#C5B4E2] px-6 py-8 rounded-lg Font3">
@@ -57,10 +57,10 @@ const LastSection = () => {
                                 className="flex-1 min-w-[240px] px-5 bg-white py-4 text-black rounded-xl outline-none text-sm font-medium"
                             />
 
-                            <button className="bg-black text-white hover:px-9  px-8 py-4 rounded-xl flex items-center gap-2 font-semibold hover:opacity-90 transition">
+                            <button className="bg-black text-white hover:px-9  px-8 py-4 max-md:px-4 max-md:py-3 rounded-xl flex items-center gap-2 font-semibold hover:opacity-90 transition">
                                 Submit
 
-                                <div className='bg-white px-[4px] py-[4px] rounded-lg text-black'>
+                                <div className='bg-white px-[4px] py-[4px]  max-md:p-[3px] rounded-lg text-black'>
                                 <FaArrowRight size={14} />
                                 </div>
                             </button>
@@ -78,17 +78,17 @@ const LastSection = () => {
                     </div>
 
                     {/* Orange */}
-                    <div className=' absolute bottom-[-5%] right-[-5%] w-fit h-fit '>
-                        <img src={`/img/lastSection/orange.svg`} alt="ol" className='w-[200px]' />
+                    <div className=' absolute bottom-[-5%] right-[-5%] max-md:left-[5%] max-md:bottom-[-13%] w-fit h-fit '>
+                        <img src={`/img/lastSection/orange.svg`} alt="ol" className='w-[200px] max-md:w-[100px]' />
                     </div>
 
                     {/* Blue */}
-                    <div className=' absolute top-[-18%] left-[70%] w-fit h-fit '>
-                        <img src={`/img/lastSection/blue.svg`} alt="ol" className='w-[200px]' />
+                    <div className=' absolute top-[-18%] left-[70%] max-md:top-[-15%] w-fit h-fit '>
+                        <img src={`/img/lastSection/blue.svg`} alt="ol" className='w-[200px] max-md:w-[100px]' />
                     </div>
 
                     {/* Star */}
-                    <div className=' absolute top-[-15%] left-[-8%] w-fit h-fit '>
+                    <div className=' absolute top-[-15%] left-[-8%] w-fit h-fit max-md:hidden '>
                         <img src={`/img/lastSection/star.svg`} alt="ol" className='w-[250px]' />
                     </div>
 

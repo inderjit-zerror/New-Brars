@@ -61,7 +61,7 @@ const ThirdSection = () => {
           scale: 1.1,
           opacity: 1,
           duration: 0.5,
-          ease: "power3.out",
+          ease: "ease.out",
         }
       );
   
@@ -72,7 +72,7 @@ const ThirdSection = () => {
           scale: 1,
           opacity: 1,
           duration: 0.5,
-          ease: "power3.out",
+          ease: "ease.out",
         }
       );
   
@@ -92,10 +92,10 @@ const ThirdSection = () => {
 
 
   return (
-    <div className='w-full h-screen bg-[#FCFAF8] flex justify-center items-center flex-col  relative overflow-hidden'>
+    <div className='w-full h-screen max-md:h-fit max-md:py-[200px] bg-[#FCFAF8] flex justify-center items-center flex-col  relative overflow-hidden max-sm:translate-y-[-30dvh]'>
 
       {/* Top-L */}
-      <div className='w-[300px] h-[300px] flex absolute top-0 left-0 justify-center items-center '>
+      <div className='w-[300px] h-[300px] max-md:w-[150px] max-md:h-[150px] flex absolute top-0 left-0 justify-center items-center '>
         {hoverIndex !== null && !isEven(hoverIndex) && (
           <div className='w-full h-full flex justify-center items-center relative'>
             <img src={imgarr[hoverIndex].textur1} className=" hover-texture fade-img absolute w-full z-[1] origin-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 textureR" />
@@ -105,7 +105,7 @@ const ThirdSection = () => {
       </div>
 
       {/* Top-r */}
-      <div className='w-[300px] h-[300px] flex absolute top-0 right-0 justify-center items-center '>
+      <div className='w-[300px] h-[300px] max-md:w-[150px] max-md:h-[150px] flex absolute top-0 right-0 justify-center items-center '>
         {hoverIndex !== null && isEven(hoverIndex) && (
           <div className='w-full h-full flex justify-center items-center relative'>
             <img src={imgarr[hoverIndex].textur1} className=" hover-texture fade-img absolute w-full z-[1] origin-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 textureR" />
@@ -115,7 +115,7 @@ const ThirdSection = () => {
       </div>
 
       {/* bottom-r */}
-      <div className='w-[300px] h-[300px] flex absolute bottom-0 right-0 justify-center items-center '>
+      <div className='w-[300px] h-[300px] max-md:w-[150px] max-md:h-[150px] flex absolute bottom-0 right-0 justify-center items-center '>
         {hoverIndex !== null && !isEven(hoverIndex) && (
           <div className='w-full h-full flex justify-center items-center relative'>
             <img src={imgarr[hoverIndex].textur2} className=" hover-texture fade-img absolute w-full z-[1] origin-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 textureR" />
@@ -125,7 +125,7 @@ const ThirdSection = () => {
       </div>
 
       {/* bottom-l */}
-      <div className='w-[300px] h-[300px] flex absolute bottom-0 left-0 justify-center items-center '>
+      <div className='w-[300px] h-[300px] max-md:w-[150px] max-md:h-[150px] flex absolute bottom-0 left-0 justify-center items-center '>
         {hoverIndex !== null && isEven(hoverIndex) && (
           <div className='w-full h-full flex justify-center items-center relative'>
             <img src={imgarr[hoverIndex].textur2} className=" hover-texture fade-img absolute w-full z-[1] origin-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 textureR" />
@@ -142,7 +142,7 @@ const ThirdSection = () => {
             <div
               onMouseEnter={() => setHoverIndex(index)}
               onMouseLeave={() => setHoverIndex(null)}
-              key={index} className='w-full h-fit flex justify-center items-center Font3 text-[7rem] leading-[6rem] uppercase select-none cursor-pointer hover:text-[#E65300] font-bold'>
+              key={index} className='w-full h-fit flex justify-center items-center Font3 text-[7rem] leading-[6rem] max-md:text-[2.5rem] max-md:leading-[2rem] uppercase select-none cursor-pointer hover:text-[#E65300] font-bold'>
               {
                 item
               }

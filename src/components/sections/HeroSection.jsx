@@ -58,7 +58,7 @@ const HeroSection = () => {
     BGTL.to(".BGCircle", {
       scale: 100,
       backgroundColor: ProductItem[activeIndex].bgCircleColor,
-      duration: 1.2,
+      duration:2,
       ease: "power4.inOut",
       onComplete: () => SetPrevBG(ProductItem[activeIndex].bgCircleColor),
     });
@@ -122,7 +122,7 @@ const HeroSection = () => {
   return (
     <div
       style={{ backgroundColor: PrevBG }}
-      className="w-full h-[120dvh] max-lg:h-screen flex justify-center items-center relative overflow-hidden "
+      className="w-full h-[120dvh] max-lg:h-screen flex justify-center items-center relative overflow-hidden bg-[#FFC629] "
     >
       <div className="BGCircle absolute top-[40%] left-[50%] translate-x-[-50%] w-[50px] h-[50px] rounded-full"></div>
 
@@ -156,7 +156,7 @@ const HeroSection = () => {
               //   clickable: true,
               // }}
               autoplay={{
-                delay: 2500, // 2.5 seconds
+                delay: 3500, // 3.5 seconds
                 disableOnInteraction: false,
               }}
               modules={[Pagination, Autoplay]}

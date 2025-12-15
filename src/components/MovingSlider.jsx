@@ -31,7 +31,7 @@ const MovingSlider = () => {
                         return(
                             <div key={index} className='w-fit h-fit flex flex-nowrap gap-5 justify-center items-center'>
                                 <img src={item.texture} alt="texture" className='w-[30px]' />
-                                <p className='text-[1.3vw] leading-[1.2vw]'>{item.text}</p>
+                                <p className='text-[1.3vw] leading-[1.2vw] max-md:text-[18px] max-md:leading-[18px]'>{item.text}</p>
                             </div>
                         )
                     })
@@ -52,7 +52,7 @@ const MovingSlider = () => {
 
 
     return (
-        <div className='w-full h-fit flex overflow-x-hidden whitespace-nowrap flex-nowrap  flex-shrink-0  gap-20 bg-[#C5B4E2] py-[2vw] '>
+        <div className='w-full h-fit flex overflow-x-hidden whitespace-nowrap flex-nowrap  flex-shrink-0  gap-20 bg-[#C5B4E2] py-[2vw] max-md:py-[5vw] '>
             <span className='SideMoveRL w-fit h-fit flex whitespace-nowrap flex-nowrap flex-shrink-0  gap-20 '>
                 <Slider />
                 <Slider />

@@ -16,13 +16,13 @@ import { GoArrowUpRight } from "react-icons/go";
 const SocialLable = ({ lable, text }) => {
     return (
         <>
-            <div className='w-fit h-fit flex Font2 font-bold select-none cursor-pointer  group  text-[18px] bg-[#C03600] px-[20px] py-[15px] rounded-lg gap-[4vw] justify-center items-center'>
+            <div className='w-fit h-fit flex Font2 font-bold select-none cursor-pointer  group  text-[18px] max-md:text-[14px] max-md:font-light bg-[#C03600] px-[20px] py-[15px] max-md:px-[10px] max-md:py-[7px] rounded-lg gap-[4vw] justify-center items-center'>
                 <div className='w-fit h-fit flex gap-[10px] justify-center items-center group-hover:translate-x-[10px] transition-all duration-500'>
                     {lable}
                     {text}
                 </div>
 
-                <div className='w-[25px] h-[25px] flex rounded-lg justify-center items-center p-[4px] bg-white group-hover:translate-x-[-10px] transition-all duration-500'>
+                <div className='w-[25px] h-[25px] max-md:hidden flex rounded-lg justify-center items-center p-[4px] bg-white group-hover:translate-x-[-10px] transition-all duration-500'>
                     < GoArrowRight className='text-[#FF4900]' />
                 </div>
             </div>
@@ -46,7 +46,7 @@ const CustomImg = () => {
                 {
                     imgArr.map((item, index) => {
                         return (
-                            <div key={index} className='w-[350px] h-[450px] overflow-hidden rounded-xl relative group'>
+                            <div key={index} className='w-[350px] h-[450px] max-md:w-[250px] max-md:h-[350px] overflow-hidden rounded-xl relative group'>
                                 <img src={item} alt="img" className='w-full object-cover' />
 
                                 {/* BlackScreen */}
@@ -109,18 +109,18 @@ const SevenSection = () => {
 
 
     return (
-        <div className='w-full h-fit flex flex-col '>
+        <div className='w-full h-fit flex flex-col overflow-hidden  max-sm:translate-y-[-30dvh]'>
             <MovingSlider />
 
-            <div className='w-full h-fit flex flex-col bg-[#FF4900] text-white py-[6vw] justify-center items-center'>
+            <div className='w-full h-fit flex flex-col bg-[#FF4900] text-white py-[6vw] max-md:pt-[50px] justify-center items-center '>
 
                 {/* SubText */}
                 <div className='w-full h-fit  flex justify-center items-center  '>
-                    <span className='Font3 w-fit h-fit rounded-xl text-[1.4rem] leading-[1.4rem] px-[13px] py-[13px]  bg-[#C03600] uppercase'>Stay in Touch</span>
+                    <span className='Font3 w-fit h-fit rounded-xl text-[1.4rem] leading-[1.4rem] px-[13px] py-[7px]  bg-[#C03600] uppercase'>Stay in Touch</span>
                 </div>
 
                 {/* Title */}
-                <div className='w-fit h-fit flex flex-col text-[5vw] mt-[2vw] leading-[4vw] Font3 justify-center items-center'>
+                <div className='w-fit h-fit flex flex-col text-[5vw] mt-[2vw] leading-[4vw] Font3 justify-center items-center max-md:mt-[20px] max-md:text-[7vw] max-md:leading-[6vw]'>
                     <div className='w-fit h-fit flex uppercase justify-center items-center'>
                         <h1>Follow</h1>
                     </div>
@@ -135,9 +135,9 @@ const SevenSection = () => {
 
                 {/* BTN`S */}
                 <div className='w-full h-fit flex justify-center items-center gap-[10px] mt-[40px]'>
-                    <SocialLable lable={<FaInstagram className='text-[30px]' />} text={'Instagram'} />
-                    <SocialLable lable={<FaFacebook className='text-[30px]' />} text={'Facebook'} />
-                    <SocialLable lable={<FaTiktok className='text-[30px]' />} text={'TikTok'} />
+                    <SocialLable lable={<FaInstagram className='text-[30px] max-md:text-[20px]' />} text={'Instagram'} />
+                    <SocialLable lable={<FaFacebook className='text-[30px] max-md:text-[20px]' />} text={'Facebook'} />
+                    <SocialLable lable={<FaTiktok className='text-[30px] max-md:text-[20px]' />} text={'TikTok'} />
                 </div>
 
                 {/* ImageSlide */}

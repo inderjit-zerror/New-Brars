@@ -76,13 +76,13 @@ const FifthSection = () => {
 
 
     return (
-        <div className='w-full min-h-screen flex pt-[100px] flex-col bg-[#FCFAF8] pb-[100px]'>
+        <div className='w-full min-h-screen max-md:min-h-fit flex pt-[100px] flex-col bg-[#FCFAF8] pb-[100px]  max-md:py-[50px] max-sm:translate-y-[-30dvh]'>
             {/* SubTitle */}
             <p className='Font3 text-[20px] leading-[18px] text-center'>Recipes</p>
 
             {/* Title */}
-            <h1 className='mt-[50px] uppercase text-[4.5vw] leading-[4vw] tracking-tight text-center Font3'>From Our Kitchen</h1>
-            <h1 className=' uppercase text-[4.5vw] leading-[4vw] tracking-tight text-center Font3'>To Yours</h1>
+            <h1 className='mt-[50px] max-md:mt-[10px] uppercase text-[4.5vw] leading-[4vw] max-md:text-[14vw] max-md:leading-[13vw] max-md:px-[4vw] tracking-tight text-center Font3'>From Our Kitchen</h1>
+            <h1 className=' uppercase text-[4.5vw] leading-[4vw] max-md:text-[14vw] max-md:leading-[13vw] max-md:px-[4vw] tracking-tight text-center Font3'>To Yours</h1>
 
             <div className='bg-black w-fit rounded-[10px] mx-auto mt-[20px]'>
                 <MainBtn text={'Learn More'} size={'big'} theam={'dark'} simble={true} />
@@ -90,7 +90,7 @@ const FifthSection = () => {
 
             {/* Main Contant */}
 
-            <div className='w-full h-fit flex mt-[40px] overflow-hidden'>
+            <div className='w-full h-fit flex mt-[40px] overflow-hidden justify-center items-center'>
                 <Swiper
                     loop={true}
                     spaceBetween={100}
@@ -98,26 +98,32 @@ const FifthSection = () => {
                     //     clickable: true,
                     // }}
                     modules={[Pagination]}
+                    centeredSlides={false}
                     breakpoints={{
                         0: {
                             slidesPerView: 1,
                             spaceBetween: 20,
+                             centeredSlides: true,
                         },
                         640: {
                             slidesPerView: 1.5,
                             spaceBetween: 20,
+                             centeredSlides: true,
                         },
                         768: {
                             slidesPerView: 2,
                             spaceBetween: 30,
+                             centeredSlides: true,
                         },
                         1024: {
                             slidesPerView: 3,
                             spaceBetween: 30,
+                             centeredSlides: false,
                         },
                         1280: {
                             slidesPerView: 4,
                             spaceBetween: 40,
+                             centeredSlides: false,
                         },
                     }}
                     className="mySwiper"
@@ -125,8 +131,8 @@ const FifthSection = () => {
                     {
                         fifthArr.map((item, index) => {
                             return (
-                                <SwiperSlide>
-                                    <div style={{ backgroundColor: item.bgclr }} key={index} className='w-full sm:w-[300px] md:w-[350px] lg:w-[400px] h-fit overflow-hidden   flex flex-col cursor-pointer justify-between rounded-[30px] min-h-[500px] p-[20px] relative '>
+                                <SwiperSlide className="max-md:!flex max-md:justify-center">
+                                    <div style={{ backgroundColor: item.bgclr }} key={index} className='w-full max-md:w-[90%] sm:w-[300px] md:w-[350px] lg:w-[400px] h-fit overflow-hidden   flex flex-col cursor-pointer justify-between rounded-[30px] min-h-[500px] p-[20px] relative '>
                                         <div className='w-full h-fit flex flex-col z-[2]'>
                                             <div className='w-full h-[240px] overflow-hidden rounded-[15px] select-none '>
                                                 <img src={item.img} alt="img" className='w-full object-cover' />

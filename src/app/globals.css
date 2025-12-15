@@ -4,6 +4,7 @@ body {
   width:100%;
   font-family:Helvetica;
   position:relative;
+  background-color: #231F20;
 }
 
 @font-face {

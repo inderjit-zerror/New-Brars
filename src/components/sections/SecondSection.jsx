@@ -216,8 +216,8 @@ const SecondSection = () => {
   }, [activeIndex]);
 
   return (
-    <div className="w-full min-h-screen bg-[#FCFAF8] flex justify-center items-center">
-      <div className="w-[90%] h-[90vh] max-md:w-[95%] bg-[#C5B4E2] rounded-[30px] flex translate-y-[-20dvh] flex-col max-sm:translate-y-[-30dvh]">
+    <div className="w-full max-md:min-h-screen h-fit bg-[#FCFAF8] flex justify-center items-center ">
+      <div className="w-[90%] h-[90vh] max-md:w-[97%] bg-[#C5B4E2] rounded-[30px] max-md:rounded-[15px] flex translate-y-[-20dvh] flex-col max-sm:translate-y-[-30dvh]">
         {/* MARQUEE */}
         <div className="w-full overflow-hidden py-4  ">
           <div
@@ -235,16 +235,17 @@ const SecondSection = () => {
         </div>
 
         {/* CONTANT-DIV */}
-        <div className="w-full h-full bg-[#F6EFE2] rounded-[30px] flex flex-col">
+        <div className="w-full h-full bg-[#F6EFE2] rounded-[30px] max-md:rounded-[15px] flex flex-col">
           {/* Buttons */}
           <div className=" w-full h-fit flex justify-center items-center gap-[20px] mt-[40px] Font3 max-md:hidden">
             {categories.map((cat, index) => (
               <button
                 key={index}
-                className={`px-[30px] py-[15px] rounded-[10px] select-none cursor-pointer  hover:outline hover:outline-[2px] hover:outline-black ${activeBtn === cat.name
-                  ? "bg-black text-white border border-black"
-                  : "bg-transparent text-black "
-                  }`}
+                className={`px-[30px] py-[15px] rounded-[10px] select-none cursor-pointer  hover:outline hover:outline-[2px] hover:outline-black ${
+                  activeBtn === cat.name
+                    ? "bg-black text-white border border-black"
+                    : "bg-transparent text-black "
+                }`}
                 onClick={() => {
                   setActiveBtn(cat.name);
                   handleCategoryClick(cat.data);
@@ -378,18 +379,20 @@ const SecondSection = () => {
                       </div>
 
                       <div className="w-full h-fit flex flex-col Font3 justify-center items-center pt-[30px]">
-                        <h2 className="text-[2vw]">{item.title}</h2>
+                        <h2 className="text-[2vw] max-md:text-[2.5rem] max-md:leading-[2.5rem] max-md:text-center">
+                          {item.title}
+                        </h2>
                         {/* features */}
                         <div className="w-full h-fit flex justify-center items-center flex-wrap gap-[4px]">
                           {item.features.map((item, index) => {
                             return (
                               <div
                                 key={index}
-                                className="w-fit h-fit flex gap-[4x] items-center"
+                                className="w-fit h-fit flex gap-[4x] items-center max-md:text-[13px] max-md:mt-[20px]"
                               >
                                 <MdVerified className="text-orange-500" />
                                 {
-                                  <p className="Font3 text-[18px] leading-[18px]">
+                                  <p className="Font3 text-[18px] leading-[18px] max-md:text-[13px] max-md:leading-[13px] ">
                                     {item}
                                   </p>
                                 }
@@ -404,17 +407,30 @@ const SecondSection = () => {
                   </SwiperSlide>
                 ))}
               </Swiper>
-              <div className="swiperBtns bg-[#231F20] px-[22px] py-[13px] rounded-lg ">
-                <button onClick={() => swiperRef.current?.slidePrev()}><div className={`w-fit cursor-pointer h-full rounded-[7px]  px-[4px] py-[4px] bg-white flex justify-center items-center `}>
-                <MdOutlineChevronLeft />
-                </div></button>
-                <div className="swiper_pagination" />
-                <button onClick={() => swiperRef.current?.slideNext()}><div className={`w-fit cursor-pointer h-full rounded-[7px] px-[4px] py-[4px] bg-white flex justify-center items-center `}>
-                  <MdKeyboardArrowRight />
-                </div></button>
+              <div className="swiperBtns bg-[#231F20] px-[22px] py-[13px] rounded-lg max-md:bg-transparent max-md:flex-col relative max-md:w-[60%] max-md: justify-center items-center  ">
+                <button className=" max-md:absolute max-md:-top-2 max-md:translate-y-1/2 left-0 " onClick={() => swiperRef.current?.slidePrev()}>
+                  <div
+                    className={`w-fit cursor-pointer h-full rounded-[7px]  px-[4px] py-[4px] bg-white max-md:bg-black max-md:text-white max-md:p-[8px] flex justify-center items-center `}
+                  >
+                    <MdOutlineChevronLeft />
+                  </div>
+                </button>
+                <div className="swiper_pagination max-md:bg-[#202020]" />
+                <button className=" max-md:absolute max-md:-top-2 max-md:translate-y-1/2   right-0" onClick={() => swiperRef.current?.slideNext()}>
+                  <div
+                    className={`w-fit cursor-pointer h-full rounded-[7px] px-[4px] py-[4px] bg-white max-md:bg-black max-md:text-white max-md:p-[8px] flex justify-center items-center `}
+                  >
+                    <MdKeyboardArrowRight />
+                  </div>
+                </button>
 
-                <div className="w-fit h-fit flex ml-[20px]">
-                <MainBtn size={'small'} text={'View All'} theam={'white'} simble={true}  />
+                <div className="w-fit h-fit flex ml-[20px] max-md:pt-[20px]">
+                  <MainBtn
+                    size={"small"}
+                    text={"View All"}
+                    theam={"white"}
+                    simble={true}
+                  />
                 </div>
               </div>
             </div>
