@@ -162,7 +162,7 @@ const SecondSection = () => {
 
   const MarqueeItem = () => {
     return (
-      <div className="text-black text-[22px] font-bold flex items-center gap-[4px] uppercase tracking-tight">
+      <div className="text-black  text-[22px] font-bold flex items-center gap-[4px] uppercase tracking-tight">
         <GoDotFill className="text-black" />{" "}
         <span> Vegetarian Done Better </span>{" "}
         <GoDotFill className="text-black" />{" "}
@@ -217,14 +217,14 @@ const SecondSection = () => {
 
   return (
     <div className="w-full max-md:min-h-screen h-fit bg-[#FCFAF8] flex justify-center items-center ">
-      <div className="w-[90%] h-[90vh] max-md:w-[97%] bg-[#C5B4E2] rounded-[30px] max-md:rounded-[15px] flex translate-y-[-20dvh] flex-col max-sm:translate-y-[-30dvh]">
+      <div className="w-[90%]  max-md:w-[97%] bg-[#C5B4E2] rounded-[30px] max-md:rounded-[15px] flex translate-y-[-20vh] flex-col max-sm:translate-y-[-25vh]">
         {/* MARQUEE */}
-        <div className="w-full overflow-hidden py-4  ">
+        <div className="w-full overflow-hidden py-0 h-20 flex items-center ">
           <div
             ref={marqueeRef}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="flex  whitespace-nowrap select-none cursor-pointer"
+            className="flex  whitespace-nowrap select-none cursor-pointer h-full"
           >
             {/* Duplicate content for seamless loop */}
             <MarqueeItem />
@@ -235,7 +235,7 @@ const SecondSection = () => {
         </div>
 
         {/* CONTANT-DIV */}
-        <div className="w-full h-full bg-[#F6EFE2] rounded-[30px] max-md:rounded-[15px] flex flex-col">
+        <div className="w-full h-fit bg-[#F6EFE2] rounded-[30px] max-md:rounded-[15px] flex flex-col pb-[40px]">
           {/* Buttons */}
           <div className=" w-full h-fit flex justify-center items-center gap-[20px] mt-[40px] Font3 max-md:hidden">
             {categories.map((cat, index) => (
@@ -408,7 +408,10 @@ const SecondSection = () => {
                 ))}
               </Swiper>
               <div className="swiperBtns bg-[#231F20] px-[22px] py-[13px] rounded-lg max-md:bg-transparent max-md:flex-col relative max-md:w-[60%] max-md: justify-center items-center  ">
-                <button className=" max-md:absolute max-md:-top-2 max-md:translate-y-1/2 left-0 " onClick={() => swiperRef.current?.slidePrev()}>
+                <button
+                  className=" max-md:absolute max-md:-top-2 max-md:translate-y-1/2 left-0 "
+                  onClick={() => swiperRef.current?.slidePrev()}
+                >
                   <div
                     className={`w-fit cursor-pointer h-full rounded-[7px]  px-[4px] py-[4px] bg-white max-md:bg-black max-md:text-white max-md:p-[8px] flex justify-center items-center `}
                   >
@@ -416,7 +419,10 @@ const SecondSection = () => {
                   </div>
                 </button>
                 <div className="swiper_pagination max-md:bg-[#202020]" />
-                <button className=" max-md:absolute max-md:-top-2 max-md:translate-y-1/2   right-0" onClick={() => swiperRef.current?.slideNext()}>
+                <button
+                  className=" max-md:absolute max-md:-top-2 max-md:translate-y-1/2   right-0"
+                  onClick={() => swiperRef.current?.slideNext()}
+                >
                   <div
                     className={`w-fit cursor-pointer h-full rounded-[7px] px-[4px] py-[4px] bg-white max-md:bg-black max-md:text-white max-md:p-[8px] flex justify-center items-center `}
                   >

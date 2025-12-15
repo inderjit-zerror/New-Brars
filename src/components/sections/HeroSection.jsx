@@ -7,6 +7,7 @@ import { Pagination, Autoplay } from "swiper/modules";
 import MainBtn from "../common/MainBtn";
 import gsap from "gsap";
 
+
 const HeroSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const productRefs = useRef([]);
@@ -126,11 +127,11 @@ const HeroSection = () => {
     >
       <div className="BGCircle absolute top-[40%] left-[50%] translate-x-[-50%] w-[50px] h-[50px] rounded-full"></div>
 
-      <div className="w-full h-screen absolute top-0 left-0 flex justify-center items-center ">
+      <div className="w-full h-screen absolute top-0 left-0 flex justify-center items-center  ">
         {/* Texture Section */}
-        <div className="w-full h-screen relative flex justify-center items-center max-lg:items-start max-md:pt-[100px] ">
+        <div className="w-full h-screen relative flex justify-center items-center max-lg:items-start max-md:pt-[100px]  ">
           {/* Texture cont */}
-          <div className="w-full h-fit max-w-[800px] flex justify-center items-center ">
+          <div className="w-full h-fit max-w-[800px] flex justify-center items-center  ">
             <img
               src={ProductItem[activeIndex].textureUrl}
               alt="TI"
@@ -139,7 +140,7 @@ const HeroSection = () => {
           </div>
 
           {/* Product */}
-          <div className="w-full h-screen max-sm:h-fit  absolute top-0 left-0 flex justify-center items-center">
+          <div className="w-full h-screen absolute top-0 left-0 flex justify-center items-center  ">
             <Swiper
               slidesPerView={"auto"}
               spaceBetween={250}
